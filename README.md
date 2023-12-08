@@ -14,17 +14,6 @@ sudo apt-get upgrade -y
 sudo apt-get install apache2 mysql-server php libapache2-mod-php php-mysql -y
 ```
 
-#### Enable firewall & configure Apache to allow HTTP & HTTPS traffic
-```
-sudo ufw enable
-```
-```
-sudo ufw allow 'Apache Full'
-```
-```
-sudo ufw status
-```
-
 #### Start MySQL & create database & user (replace ```mydb```, ```db_user```, and ```db_pass123``` with your desired database name, username, and password)
 ```
 sudo service mysql start
