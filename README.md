@@ -25,7 +25,7 @@ sudo ufw allow 'Apache Full'
 sudo ufw status
 ```
 
-### Start MySQL & create database & user (replace ```mydb```, ```db_user```, and ```db_pass123``` with your desired database name, username, and password)
+### Start MySQL & create database.
 ```
 sudo service mysql start
 ```
@@ -33,16 +33,16 @@ sudo service mysql start
 sudo mysql
 ```
 ```
-CREATE USER 'db_user'@'localhost' IDENTIFIED BY 'db_pass123';
+CREATE USER 'username_here'@'localhost' IDENTIFIED BY 'password_here';
 ```
 ```
-CREATE DATABASE IF NOT EXISTS mydb;
+CREATE DATABASE IF NOT EXISTS database_name_here;
 ```
 ```
-GRANT ALL PRIVILEGES ON mydb.* TO 'db_user'@'localhost';
+GRANT ALL PRIVILEGES ON database_name_here.* TO 'username_here'@'localhost';
 ```
 ```
-ALTER DATABASE mydb CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER DATABASE database_name_here CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
 ```
 FLUSH PRIVILEGES;
@@ -56,16 +56,13 @@ exit
 cd /var/www/html/
 ```
 ```
-sudo mkdir 2112121
-```
-```
-cd 2112121/
-```
-```
 sudo wget https://wordpress.org/latest.tar.gz
 ```
 ```
-sudo tar -xzvf latest.tar.gz
+sudo tar -xf latest.tar.gz
+```
+```
+mv wordpress 2112121
 ```
 
 ### Copy WordPress config file & update it with database credentials
@@ -74,17 +71,6 @@ cd /var/www/html/2112121/wordpress
 ```
 ```
 sudo cp wp-config-sample.php wp-config.php
-```
-```
-sudo nano wp-config.php
-```
-
-### Navigate to Apache site configurations & update path to WordPress directory (```DocumentRoot /var/www/html/2112121/wordpress/```)
-```
-cd /etc/apache2/sites-available/
-```
-```
-sudo nano 000-default.conf
 ```
 
 ### Restart Apache to apply changes
