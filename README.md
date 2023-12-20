@@ -62,15 +62,23 @@ sudo wget https://wordpress.org/latest.tar.gz
 sudo tar -xf latest.tar.gz
 ```
 ```
-mv wordpress 2112121
+sudo mv wordpress 2112121
 ```
 
 ### Copy WordPress config file & update it with database credentials
 ```
-cd /var/www/html/2112121/wordpress
+cd /var/www/html/2112121
 ```
 ```
 sudo cp wp-config-sample.php wp-config.php
+```
+
+### Navigate to Apache site configurations & update path to WordPress directory (```DocumentRoot /var/www/html/2112121```)
+```
+cd /etc/apache2/sites-available/
+```
+```
+sudo nano 000-default.conf
 ```
 
 ### Restart Apache to apply changes
