@@ -1,3 +1,18 @@
+<details><summary>Installation using Script</summary>
+
+```
+wget -O setup.sh https://raw.githubusercontent.com/mustan-ali/LAMP-Wordpress/main/setup.sh
+```
+```
+chmod +x setup.sh
+```
+```
+./setup.sh
+```
+</details>
+
+<details><summary>Manual Installation</summary>
+
 ### Update package lists & upgrade packages
 ```
 sudo apt-get update -y
@@ -85,3 +100,4 @@ sudo nano 000-default.conf
 ```
 sudo service apache2 restart
 ```
+</details>
